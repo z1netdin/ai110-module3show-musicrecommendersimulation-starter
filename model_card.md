@@ -21,16 +21,11 @@ Prompts:
 
 ## 3. How the Model Works  
 
-Explain your scoring approach in simple language.  
+This recommender doesn't learn from what anyone else listened to. It just compares each song's own attributes to what the user says they want, and scores how well they line up. Four things matter: the song's genre, its mood, how energetic it is, and how acoustic it sounds. The user's taste profile says which genre and mood they like, roughly how much energy they want, and whether they tend to like acoustic songs.
 
-Prompts:  
+To get a score, the song earns points for each thing that lines up: a bit of credit for matching genre, a bit more for matching mood (I decided mood should count for more, since two songs in the same genre can still feel completely different, while songs in different genres can share the same vibe), and a sliding amount of credit for energy depending on how close it is to what the user wants, not just whether it's high or low. There's also a small bonus or penalty depending on whether the song's acoustic-ness fits what the user usually likes. All of that gets added up into one number, and the song also gets a plain-English list of reasons for why it scored the way it did, so a user isn't just shown a number out of nowhere.
 
-- What features of each song are used (genre, energy, mood, etc.)  
-- What user preferences are considered  
-- How does the model turn those into a score  
-- What changes did you make from the starter logic  
-
-Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+Once every song in the catalog has a score, the system just sorts them from highest to lowest and hands back the top handful. The starter code originally just returned the first few songs in the file with no real scoring at all, so the main change is that recommendations are now actually based on matching the user's stated preferences instead of file order.
 
 ---
 

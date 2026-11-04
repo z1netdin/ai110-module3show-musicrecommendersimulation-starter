@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Broken Streetlights,Ashen Veil,metal,angry,0.95,160,0.22,0.45,0.04
+12,Grandma's Kitchen,Willow Creek,country,nostalgic,0.45,95,0.68,0.50,0.65
+13,Velvet Hour,Marcus Dune,r&b,romantic,0.50,85,0.72,0.68,0.40
+14,Carnival Lights,Luna Ray,latin,playful,0.80,128,0.88,0.90,0.20
+15,Whispering Pines,Elena Frost,folk,melancholic,0.30,68,0.35,0.40,0.88
+16,Neon Shadows,Cipher Loop,electronic,mysterious,0.68,122,0.45,0.70,0.12
+17,Rainy Window Blues,Otis Grey,blues,sad,0.32,70,0.28,0.42,0.75
+18,Golden Horizon,The Skyline Choir,classical,triumphant,0.70,100,0.82,0.35,0.60
