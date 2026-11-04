@@ -98,8 +98,15 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
     """Scores every song, ranks by score, and returns the top k as (song, score, explanation)."""
+    target_energy = user_prefs.get("energy")
     scored = [(song, *score_song(user_prefs, song)) for song in songs]
-    ranked = sorted(scored, key=lambda item: item[1], reverse=True)
+
+    def sort_key(item):
+        song, score, _ = item
+        energy_diff = abs(song["energy"] - target_energy) if target_energy is not None else 0.0
+        return (-score, energy_diff)
+
+    ranked = sorted(scored, key=sort_key)
 
     return [
         (song, score, "; ".join(reasons) if reasons else "no strong matches")
